@@ -31,3 +31,29 @@ let totalNumerosImpares = numerosImpares.length
 
 console.log(`En el array hay ${totalNumerosPares} números pares y ${totalNumerosImpares} números impares`);
 
+// Challenge 2
+
+let newArray = [
+    [3, 567, 23],
+    [23, 54, 23],
+    [27, 457, 67],
+    [34, 675, 12],
+  ];
+
+  let sumaArray = []
+
+  for(let i = 0; i < newArray.length; i++){
+    let suma = newArray[i][0] + newArray[i][1] + newArray[i][2]
+    sumaArray.push(suma)
+  }
+
+  console.log(sumaArray);
+
+  let sumaOtherLoop = []
+
+    for(let numero of newArray){
+        let suma = numero[0] + numero[1] + numero[2]
+        sumaOtherLoop.push(suma)
+    }
+  
+    console.log(sumaOtherLoop);
