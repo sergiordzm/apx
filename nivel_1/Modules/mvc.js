@@ -11,3 +11,24 @@
 
 // model: El modelo en cambio estará ubicado dentro de uno o más módulos (archivos JavaScript) dependiendo de la cantidad de datos a manipular. Si no tenemos muchos datos que manipular podemos simplemente escribir toda la lógica de los datos de nuestra app en un módulo modelo.js
 
+//  Challenge: Para este desafío, debes crear una aplicación estructurada en dos módulos.
+
+// Este módulo es el controller del programa. Debe tener una función main() y será el encargado de llamar a las funciones del módulo products. Solo se pueden imprimir en la pantalla desde este módulo.
+
+const { getProduct } = require('./products');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+function main() {
+    rl.question('Ingresa el id de su producto: ', (productId) => {
+        const findById = getProduct(productId);
+        console.log(findById);
+        rl.close();
+    });
+}
+
+main();
